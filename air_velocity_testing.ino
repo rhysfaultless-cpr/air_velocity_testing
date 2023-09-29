@@ -25,7 +25,7 @@ FS3000 fs;
 void setup()
 {
   Serial.begin(115200);
-  Serial.println("Example 1 - Reading values from the FS3000");
+  // Serial.println("Example 1 - Reading values from the FS3000");
 
   Wire.begin();
 
