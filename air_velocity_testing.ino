@@ -48,15 +48,16 @@ void setup()
 
 void loop()
 {
-    Serial.print('\n');
     // Serial.print("FS3000 Readings \tRaw: ");
     // Serial.print(fs.readRaw()); // note, this returns an int from 0-3686
     
     // Serial.print("\tm/s: ");
-    Serial.print(fs.readMetersPerSecond()); // note, this returns a float from 0-7.23 for the FS3000-1005, and 0-15 for the FS3000-1015 
+    // Serial.print(fs.readMetersPerSecond()); // note, this returns a float from 0-7.23 for the FS3000-1005, and 0-15 for the FS3000-1015 
     
     // Serial.print("\tmph: ");
     // Serial.println(fs.readMilesPerHour()); // note, this returns a float from 0-16.17 for the FS3000-1005, and 0-33.55 for the FS3000-1015 
     
+    Serial.print(fs.readMetersPerSecond()); // note, this returns a float from 0-7.23 for the FS3000-1005, and 0-15 for the FS3000-1015 
+    Serial.print('\n');
     delay(1000); // note, reponse time on the sensor is 125ms
 }
