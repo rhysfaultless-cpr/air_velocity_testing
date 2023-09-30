@@ -4,3 +4,5 @@
 
 1.  Serial device found: `Bus 001 Device 006: ID 1a86:7523 QinHeng Electronics CH340 serial converter`
 2.  Had to give permissions for the serial port: `sudo chown administrator /dev/ttyUSB0`
+3.  `sudo apt install python3-pip`
+4.  `python3 -m pip install pyserial`
