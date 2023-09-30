@@ -2,6 +2,8 @@ import serial
 import time
 
 def get_air_velocity_metres():
+  global air_velocity_reading
+
   with serial.Serial('/dev/ttyUSB0', 115200, timeout=1) as ser:
     serial_read_bytes = ser.readline()
 
@@ -14,7 +16,7 @@ def get_air_velocity_metres():
   air_velocity_string = air_velocity_string.lstrip(air_velocity_string[0])
 
   # return integer of the air speed in cm/s
-  return int(float(air_velocity_string)*100)
+  air_velocity_reading = int(float(air_velocity_string)*100)
 
 
 while True:
