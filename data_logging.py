@@ -18,5 +18,5 @@ def get_air_velocity_metres():
 
 
 while True:
-  print(str(get_air_velocity_metres()) + " cm/s")
+  # print(str(get_air_velocity_metres()) + " cm/s")
   time.sleep(0.1)
