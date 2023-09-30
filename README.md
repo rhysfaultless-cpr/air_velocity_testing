@@ -2,15 +2,17 @@
 
 ## Reviewing MariaDB / MySQL
 
-|   Command Type    |   Command                                     |   Purpose                                                                 |
-|   :-------------- |   :------------------------------------------ |   :-----------------------------------------------------------------------|
-|   bash            |   `sudo mysql;`                               |   enters the MySQL terminal                                               |
-|   MySQL           |   `use air_velocity_database;`                |   connect to the air_velocity_database                                    |
-|   MySQL           |   `show full tables;`                         |   list all the tables inside the current database                         |
-|   MySQL           |   `show columns in AirVelocityMeasurements;`  |   lists the columens in the table AirVelocityMeasurements                 |
-|   MySQL           |   `select * from AirVelocityMeasurements;`    |   lists all rows and related data from the table AirVelocityMeasurements  |
-|   MySQL           |   `delete from AirVelocityMeasurements;`      |   deletes all rows from the table AirVelocityMeasurements                 |
-|   MySQL           |   `SELECT user FROM mysql.user;`              |   view all users                                                          |
+|   Command Type | Command                                                                                          | Purpose                                                                |
+|   :----------- | :----------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------|
+|   bash         | `sudo mysql;`                                                                                    | enters the MySQL terminal                                              |
+|   MySQL        | `use air_velocity_database;`                                                                     | connect to the air_velocity_database                                   |
+|   MySQL        | `show full tables;`                                                                              | list all the tables inside the current database                        |
+|   MySQL        | `show columns in AirVelocityMeasurements;`                                                       | lists the columens in the table AirVelocityMeasurements                |
+|   MySQL        | `select * from AirVelocityMeasurements;`                                                         | lists all rows and related data from the table AirVelocityMeasurements |
+|   MySQL        | `delete from AirVelocityMeasurements;`                                                           | deletes all rows from the table AirVelocityMeasurements                |
+|   MySQL        | `SELECT user FROM mysql.user;`                                                                   | view all users                                                         |
+|   MySQL        | `ALTER TABLE AirVelocityMeasurements ADD COLUMN Datetime DATETIME(6) DEFAULT CURRENT_TIMESTAMP;` | add column                                                             |
+|   MySQL        | `ALTER TABLE AirVelocityMeasurements DROP COLUMN Datetime;`                                      | removes column                                                         |
 
 ## Installation Notes
 
