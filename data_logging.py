@@ -2,7 +2,7 @@ import serial
 import time
 
 def get_air_velocity_metres():
-  with serial.Serial('COM5', 115200, timeout=1) as ser:
+  with serial.Serial('/dev/ttyUSB0', 115200, timeout=1) as ser:
     serial_read_bytes = ser.readline()
 
   # convert to string, and remove byte packaging characters
