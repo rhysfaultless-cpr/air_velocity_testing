@@ -127,9 +127,17 @@
         The `Run query` button will allow you to test the query before saving it.
 
         This is the SQL expression used to create the attached plot:
+
         ```
         SELECT AirVelocityCentimetresPerSecond, Datetime FROM air_velocity_database.AirVelocityMeasurements
         ```
 
         <img src="/readme_assets/readme_1.png" width="467"/>
 
+        Note: Grafana requires a row's time value to have the datetime format in MySQL, including six decimal points representing microseconds.
+        Grafana also needs values to be aligned with UTC time, not local time.
+        In Python, this is created with:
+        
+        ```
+        datetime_for_database = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')
+        ```
