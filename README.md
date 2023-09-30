@@ -85,3 +85,51 @@
         ```
         show columns in AirVelocityMeasurements;    
         ```
+    TODO, this has not been configured to start on boot yet.
+
+5.  Grafana installation and configuration
+    1.  [Install Grafana](https://grafana.com/grafana/download/10.1.4)
+        ```
+        sudo apt-get install -y adduser libfontconfig1 musl
+        wget https://dl.grafana.com/enterprise/release/grafana-enterprise_10.1.4_amd64.deb
+        sudo dpkg -i grafana-enterprise_10.1.4_amd64.deb
+        ```
+    2.  [Starting Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/start-restart-grafana/)
+        ```
+        sudo systemctl daemon-reload
+        sudo systemctl start grafana-server
+        sudo systemctl status grafana-server
+        ```
+    
+        To get Grafana to automatically start after the computer boot:
+        ```
+        sudo systemctl enable grafana-server.service
+        ```
+    3.  Sign into Grafana
+        -   Go to Chrome or Firefox and enter the URL http://localhost:3000/
+        -   Username: `admin`
+        -   Password: `admin`
+    4.  Click on the button `Add your first datasource`
+    5.  Select `MySQL`
+    6.  On the MySQL configuration page, enter these fields:
+        |   Field       |   Value                   |
+        |   :---------- |   :---------------------- |
+        |   Name        |   Air-Velocity-Source     |
+        |   Default     |   Yes / Enabled           |
+        |   Host        |   localhost:3306          |
+        |   Datebase    |   air_velocity_database   |
+        |   User        |   database_administrator  |
+        |   Password    |   clearpath               |
+
+        Then select the `Save and Test` button.
+    7.  Create a dashboard with a `Time series` plot`.
+        You can manually select the fields of interest, or select `code` to enter an SQL expression.
+        The `Run query` button will allow you to test the query before saving it.
+
+        This is the SQL expression used to create the attached plot:
+        ```
+        SELECT AirVelocityCentimetresPerSecond, Datetime FROM air_velocity_database.AirVelocityMeasurements
+        ```
+
+        <img src="/readme_assets/readme_1.png" width="467"/>
+
