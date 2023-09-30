@@ -132,7 +132,7 @@
         SELECT AirVelocityCentimetresPerSecond, Datetime FROM air_velocity_database.AirVelocityMeasurements
         ```
 
-        <img src="/readme_assets/readme_1.png" width="467"/>
+        <center><img src="/readme_assets/readme_1.png" width="800"/></center>
 
         Note: Grafana requires a row's time value to have the datetime format in MySQL, including six decimal points representing microseconds.
         Grafana also needs values to be aligned with UTC time, not local time.
