@@ -1,5 +1,6 @@
 import serial
 import time
+import mysql.connector # for database updates
 
 def get_air_velocity_metres():
   global air_velocity_reading
@@ -19,6 +20,43 @@ def get_air_velocity_metres():
   air_velocity_reading = int(float(air_velocity_string)*100)
 
 
+def add_to_database():
+    global air_velocity_reading
+
+    air_velocity_database = mysql.connector.connect(
+        host="localhost",
+        user="database_administrator",
+        password="clearpath",
+        database="air_velocity_database"
+    )
+    
+    cursor = air_velocity_database.cursor()
+
+    timestamp_for_database = time.strftime('%Y-%m-%d %H:%M:%S')
+
+    data_air_velocity_element = {
+        'AirVelocityCentimetresPerSecond': air_velocity_reading,
+        'TimestampValue': timestamp_for_database
+    }
+
+    add_air_velocity_element = ("INSERT INTO AirVelocityMeasurements "
+              "(AirvelocityCentimetresPerSecond, TimestampValue) "
+              "VALUES (%(AirVelocityCentimetresPerSecond)s, %(TimestampValue)s)")
+
+    # ElementIdentification is not included in data_air_velocity_element or add_air_velocity_element
+    # This is because the table, AirVelocityMeasurements is configured to AutoIncrement this element
+
+    cursor.execute(add_air_velocity_element, data_air_velocity_element)
+    air_velocity_database.commit()
+    cursor.close()
+    air_velocity_database.close()
+
+    print("Air velocity reading: " + str(air_velocity_reading) + " cm/s")
+    print("\r")
+
+
 while True:
   # print(str(get_air_velocity_metres()) + " cm/s")
+  get_air_velocity_metres()
+  add_to_database()
   time.sleep(0.1)
