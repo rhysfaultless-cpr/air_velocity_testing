@@ -13,10 +13,10 @@ def get_air_velocity_metres():
   air_velocity_string = air_velocity_string.lstrip(air_velocity_string[0])
   air_velocity_string = air_velocity_string.lstrip(air_velocity_string[0])
 
-  # return float of the air speed in m/s
-  return float(air_velocity_string)
+  # return integer of the air speed in cm/s
+  return int(float(air_velocity_string)*100)
 
 
 while True:
-  print(str(get_air_velocity_metres()) + " m/s")
+  print(str(get_air_velocity_metres()) + " cm/s")
   time.sleep(0.1)
