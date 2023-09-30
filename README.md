@@ -85,7 +85,10 @@
         ```
         show columns in AirVelocityMeasurements;    
         ```
-    TODO, this has not been configured to start on boot yet.
+    9.  In a bash terminal, enter this command to make MariaDB start after computer startup:
+        ```
+        sudo systemctl enable mariadb
+        ```
 
 5.  Grafana installation and configuration
     1.  [Install Grafana](https://grafana.com/grafana/download/10.1.4)
