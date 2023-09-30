@@ -69,7 +69,7 @@
         CREATE TABLE AirVelocityMeasurements (
         ElementIdentification BIGINT NOT NULL AUTO_INCREMENT,
         AirVelocityCentimetresPerSecond SMALLINT NOT NULL,
-        TimestampValue TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        Datetime DATETIME(6) CURRENT_TIMESTAMP,
         PRIMARY KEY ( ElementIdentification )
         );
         ```
