@@ -3,6 +3,10 @@ import time
 from datetime import datetime
 import mysql.connector # for database updates
 
+
+time.sleep(30) # delay for 30 seconds to avoid issues during computer startup
+
+
 def get_air_velocity_metres():
   global air_velocity_reading
 
