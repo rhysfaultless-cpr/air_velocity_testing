@@ -4,7 +4,7 @@
 
 ## Using Grafana
 
-Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL [a300-testing-1:3000].
+Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL [a300-testing-1:3000](http://a300-testing-1:3000).
 If you cannot connect, it is likely due to:
 1.  The server is not on,
 2.  There is an issue with one of the programs / applications on the server,
