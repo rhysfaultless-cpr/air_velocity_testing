@@ -40,7 +40,31 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 
 <br/>
 
-## Installation Notes
+## Sensor and Microcontroller Installation
+
+This testing setup uses a [SparkFun KIT-21310](https://www.sparkfun.com/products/21310), which includes:
+-   Development board, RedBoard Artemis Nano ( _DEV-15443_ )
+-   Sensor, FS3000-1015 ( _SEN-18768_ )
+
+There are detailed instructions on the SparkFun website, but my notes are:
+1.  Connect the sensor to the development board using the supplied Qwiic cable.
+2.  Connect the development board to your development computer using the supplied USB cable.
+3.  Open the _Arduino IDE_ application on your development computer.
+4.  Make sure _Arduino IDE_'s preferences for board manager include the SparkFun JSON URL:
+    ```
+    https://raw.githubusercontent.com/sparkfun/Arduino_Apollo3/main/package_sparkfun_apollo3_index.json
+    ```
+
+    Note: this link worked in 2023-September, but may change over time.
+5.  Set the port in _Arduino IDE_.
+6.  Set the board to _SparkFun Apollo3 → RedBoard Artemis Nano_.
+7.  Use the source file `air_velocity_testing.ino` from this repository.
+8.  Upload the sketch.
+9.  Using _Arduino IDE_'s serial monitor, confirm you are getting _cm/s_ integers every 0.1 seconds, when set to 115200 baud.
+
+<br/>
+
+## Computer Installation
 
 1.  Set up a mini-ITX computer with Ubuntu 22.04
 2.  Adding serial device permissions
@@ -172,14 +196,17 @@ There is also a refresh button, which adds the latest data into the graph, thoug
         ```
 6.  Configure serial /dev/tty connection with microcontroller.
 
-    The device was not appearing as ttyUSB0 on boot, but would appear after unplugging and then plugging in the USB cable again.
+    Make sure the SparkFun development board and sensor are attached to the computer with the supplied USB cable.
+    Both the development board and sensor should have red LEDs to confirm that they are powered.
+
+    The device was not appearing as ttyUSB0 after computer startup, but would appear after unplugging and then plugging in the USB cable again.
     This led me to look into udev rules, and eventually find [this forum](https://askubuntu.com/questions/1403705/dev-ttyusb0-not-present-in-ubuntu-22-04).
     This command resolved the issue:
     ```
     sudo apt remove brltty
     ```
 
-    Note, this was the information I got from `sudo dmesg` related to the Sparkfun Artemis Nano microcontroller:
+    Note, this was the information I got from `sudo dmesg` related to the SparkFun Artemis Nano microcontroller:
     ```
     ATTRS{product}=="USB Serial"
     ATTRS{idProduct}=="7523"
