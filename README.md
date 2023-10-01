@@ -111,8 +111,8 @@ There are detailed instructions on the SparkFun website, but my notes are:
         ```
         use air_velocity_database;
         ```
-        -   The prompt will change to MariaDB [air_velocity_database]>
-        -   The prompt was MariaDB [(none)]>
+        -   The prompt will change to MariaDB `[air_velocity_database]>`
+        -   The prompt was MariaDB `[(none)]>`
 
     7.  Create a table inside the `air_velocity_database` database:
         ```
