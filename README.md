@@ -1,5 +1,29 @@
 # air_velocity_testing
 
+<br/>
+
+## Using Grafana
+
+Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL <a300-testing-1:3000>.
+If you cannot connect, it is likely due to:
+1.  The server is not on,
+2.  There is an issue with one of the programs / applications on the server,
+3.  Or the company's DNS is not converting `a300-testing-1` to the server's IP address.
+
+Once you get to the Grafana login page, enter:
+- Username: `admin`
+- Password: `clearpath`
+
+<center><img src="/readme_assets/readme_grafana_login.png" width="800"/></center>
+
+Once logged in, you should see the _Air Velocity_ dashboard.
+You can change the x-axis timespan using the dropdown in the top right corner, which is labelled `Last 5 minutes` in the attached screenshot.
+There is also a refresh button, which adds the latest data into the graph, though it should already be configured to update every 5 seconds.
+
+<center><img src="/readme_assets/readme_grafana_plot.png" width="800"/></center>
+
+<br/>
+
 ## Reviewing MariaDB / MySQL
 
 |   Command Type | Command                                                                                          | Purpose                                                                |
@@ -13,6 +37,8 @@
 |   MySQL        | `SELECT user FROM mysql.user;`                                                                   | view all users                                                         |
 |   MySQL        | `ALTER TABLE AirVelocityMeasurements ADD COLUMN Datetime DATETIME(6) DEFAULT CURRENT_TIMESTAMP;` | add column                                                             |
 |   MySQL        | `ALTER TABLE AirVelocityMeasurements DROP COLUMN Datetime;`                                      | removes column                                                         |
+
+<br/>
 
 ## Installation Notes
 
@@ -135,7 +161,7 @@
         SELECT AirVelocityCentimetresPerSecond, Datetime FROM air_velocity_database.AirVelocityMeasurements
         ```
 
-        <center><img src="/readme_assets/readme_1.png" width="800"/></center>
+        <center><img src="/readme_assets/readme_grafana_sql.png" width="800"/></center>
 
         Note: Grafana requires a row's time value to have the datetime format in MySQL, including six decimal points representing microseconds.
         Grafana also needs values to be aligned with UTC time, not local time.
