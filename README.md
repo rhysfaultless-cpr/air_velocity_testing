@@ -144,3 +144,21 @@
         ```
         datetime_for_database = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')
         ```
+6.  Configure serial /dev/tty connection with microcontroller.
+
+    The device was not appearing as ttyUSB0 on boot, but would appear after unplugging and then plugging in the USB cable again.
+    This led me to look into udev rules, and eventually find [this forum](https://askubuntu.com/questions/1403705/dev-ttyusb0-not-present-in-ubuntu-22-04).
+    This command resolved the issue:
+    ```
+    sudo apt remove brltty
+    ```
+
+    Note, this was the information I got from `sudo dmesg` related to the Sparkfun Artemis Nano microcontroller:
+    ```
+    ATTRS{product}=="USB Serial"
+    ATTRS{idProduct}=="7523"
+    ATTRS{idVendor}=="1a86"
+    ```
+    
+    The full output is saved to `./readme_assets/dmesg_output`.
+
