@@ -14,13 +14,13 @@ Once you get to the Grafana login page, enter:
 - Username: `admin`
 - Password: `clearpath`
 
-<center><img src="/readme_assets/readme_2.png" width="800"/></center>
+<center><img src="/readme_assets/readme_grafana_login.png" width="800"/></center>
 
 Once logged in, you should see the _Air Velocity_ dashboard.
 You can change the x-axis timespan using the dropdown in the top right corner, which is labelled `Last 5 minutes` in the attached screenshot.
 There is also a refresh button, which adds the latest data into the graph, though it should already be configured to update every 5 seconds.
 
-<center><img src="/readme_assets/readme_4.png" width="800"/></center>
+<center><img src="/readme_assets/readme_grafana_plot.png" width="800"/></center>
 
 ## Reviewing MariaDB / MySQL
 
@@ -157,7 +157,7 @@ There is also a refresh button, which adds the latest data into the graph, thoug
         SELECT AirVelocityCentimetresPerSecond, Datetime FROM air_velocity_database.AirVelocityMeasurements
         ```
 
-        <center><img src="/readme_assets/readme_1.png" width="800"/></center>
+        <center><img src="/readme_assets/readme_grafana_sql.png" width="800"/></center>
 
         Note: Grafana requires a row's time value to have the datetime format in MySQL, including six decimal points representing microseconds.
         Grafana also needs values to be aligned with UTC time, not local time.
