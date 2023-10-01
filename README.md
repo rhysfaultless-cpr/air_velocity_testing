@@ -20,7 +20,7 @@ Once logged in, you should see the _Air Velocity_ dashboard.
 You can change the x-axis timespan using the dropdown in the top right corner, which is labelled `Last 5 minutes` in the attached screenshot.
 There is also a refresh button, which adds the latest data into the graph, though it should already be configured to update every 5 seconds.
 
-
+<center><img src="/readme_assets/readme_3.png" width="800"/></center>
 
 ## Reviewing MariaDB / MySQL
 
