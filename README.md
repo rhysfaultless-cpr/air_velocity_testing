@@ -1,5 +1,27 @@
 # air_velocity_testing
 
+<br/>
+
+## Using Grafana
+
+Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL <a300-testing-1:3000>.
+If you cannot connect, it is likely due to:
+1.  The server is not on,
+2.  There is an issue with one of the programs / applications on the server,
+3.  Or the company's DNS is not converting `a300-testing-1` to the server's IP address.
+
+Once you get to the Grafana login page, enter:
+- Username: `admin`
+- Password: `clearpath`
+
+<center><img src="/readme_assets/readme_2.png" width="800"/></center>
+
+Once logged in, you should see the _Air Velocity_ dashboard.
+You can change the x-axis timespan using the dropdown in the top right corner, which is labelled `Last 5 minutes` in the attached screenshot.
+There is also a refresh button, which adds the latest data into the graph, though it should already be configured to update every 5 seconds.
+
+<center><img src="/readme_assets/readme_3.png" width="800"/></center>
+
 ## Reviewing MariaDB / MySQL
 
 |   Command Type | Command                                                                                          | Purpose                                                                |
