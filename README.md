@@ -22,8 +22,8 @@
     -   Added permissions for the serial port: `sudo chown administrator /dev/ttyUSB0`
 3.  Install Python tools and libraries
     -   `sudo apt install python3-pip`
-    -   `python3 -m pip install pyserial`
-    -   `pip3 install mysql-connector-python`
+    -   `sudo python3 -m pip install pyserial`
+    -   `sudo pip3 install mysql-connector-python`
 4.  Install and configure [MariaDB](https://mariadb.com/kb/en/installing-mariadb-deb-files/#installing-mariadb-packages-with-apt)
     1.  Install the required tools on Ubuntu:
         ```
