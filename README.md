@@ -22,6 +22,8 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 
 <center><img src="/readme_assets/readme_grafana_plot.png" width="800"/></center>
 
+<br/>
+
 ## Reviewing MariaDB / MySQL
 
 |   Command Type | Command                                                                                          | Purpose                                                                |
@@ -35,6 +37,8 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 |   MySQL        | `SELECT user FROM mysql.user;`                                                                   | view all users                                                         |
 |   MySQL        | `ALTER TABLE AirVelocityMeasurements ADD COLUMN Datetime DATETIME(6) DEFAULT CURRENT_TIMESTAMP;` | add column                                                             |
 |   MySQL        | `ALTER TABLE AirVelocityMeasurements DROP COLUMN Datetime;`                                      | removes column                                                         |
+
+<br/>
 
 ## Installation Notes
 
