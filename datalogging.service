@@ -1,0 +1,8 @@
+[Unit]
+Description=Air Velocity Data Logging Service
+
+[Service]
+ExecStart=/bin/sh -c "/usr/bin/python3 /usr/bin/data_logging.py"
+
+[Install]
+WantedBy=multi-user.target

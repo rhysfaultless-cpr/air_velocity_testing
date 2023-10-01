@@ -162,3 +162,20 @@
     
     The full output is saved to `./readme_assets/dmesg_output`.
 
+7.  Configure the Python program to run during computer startup:
+    1.  Copy the Python file to `/usr/bin/`.
+    2.  Give the Python file `data_logging.py` _Executing_ permissions, so it can run as a program:
+        ```
+        sudo chmod +x /usr/bin/data_logging.py
+        ```
+    3.  Copy _datalogging.service_ to `/etc/systemd/system/`.
+    4.  In a termainal, run the commands:
+        ```
+        sudo systemctl daemon-reload
+        sudo systemctl start datalogging.service
+        sudo systemctl enable datalogging.service
+        ```
+        You can then confirm that the service is running using:
+        ```
+        sudo systemctl status datalogging.service
+        ```
