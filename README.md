@@ -4,7 +4,7 @@
 
 ## Using Grafana
 
-Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL <a300-testing-1:3000>.
+Assuming the `a300-testing-1` server is running on the company LAN, you can access it onsite or through the VPN by going to a your browser and entering the URL [a300-testing-1:3000](http://a300-testing-1:3000).
 If you cannot connect, it is likely due to:
 1.  The server is not on,
 2.  There is an issue with one of the programs / applications on the server,
@@ -111,8 +111,8 @@ There are detailed instructions on the SparkFun website, but my notes are:
         ```
         use air_velocity_database;
         ```
-        -   The prompt will change to MariaDB [air_velocity_database]>
-        -   The prompt was MariaDB [(none)]>
+        -   The prompt will change to MariaDB `[air_velocity_database]>`
+        -   The prompt was MariaDB `[(none)]>`
 
     7.  Create a table inside the `air_velocity_database` database:
         ```
