@@ -22,21 +22,15 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 
 <center><img src="/readme_assets/readme_grafana_plot.png" width="800"/></center>
 
-<br/>
+<br />
 
-## Reviewing MariaDB / MySQL
+## Tools Used
 
-|   Command Type | Command                                                                                          | Purpose                                                                |
-|   :----------- | :----------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------|
-|   bash         | `sudo mysql;`                                                                                    | enters the MySQL terminal                                              |
-|   MySQL        | `use air_velocity_database;`                                                                     | connect to the air_velocity_database                                   |
-|   MySQL        | `show full tables;`                                                                              | list all the tables inside the current database                        |
-|   MySQL        | `show columns in AirVelocityMeasurements;`                                                       | lists the columens in the table AirVelocityMeasurements                |
-|   MySQL        | `select * from AirVelocityMeasurements;`                                                         | lists all rows and related data from the table AirVelocityMeasurements |
-|   MySQL        | `delete from AirVelocityMeasurements;`                                                           | deletes all rows from the table AirVelocityMeasurements                |
-|   MySQL        | `SELECT user FROM mysql.user;`                                                                   | view all users                                                         |
-|   MySQL        | `ALTER TABLE AirVelocityMeasurements ADD COLUMN Datetime DATETIME(6) DEFAULT CURRENT_TIMESTAMP;` | add column                                                             |
-|   MySQL        | `ALTER TABLE AirVelocityMeasurements DROP COLUMN Datetime;`                                      | removes column                                                         |
+1.  Arduino + [SparkFun FS3000-1015](https://github.com/sparkfun/SparkFun_FS3000_Arduino_Library) library
+2.  [Ubuntu 22.04](https://ubuntu.com/download/desktop)
+3.  Python + [datetime](https://docs.python.org/3/library/datetime.html) library + [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library + [mysql-connector](https://pypi.org/project/mysql-connector-python/) library
+4.  [MariaDB](https://mariadb.org/)
+5.  [Grafana](https://grafana.com/)
 
 <br/>
 
@@ -232,3 +226,19 @@ There are detailed instructions on the SparkFun website, but my notes are:
         ```
         sudo systemctl status datalogging.service
         ```
+
+<br/>
+
+## Reviewing MariaDB / MySQL
+
+|   Command Type | Command                                                                                          | Purpose                                                                |
+|   :----------- | :----------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------|
+|   bash         | `sudo mysql;`                                                                                    | enters the MySQL terminal                                              |
+|   MySQL        | `use air_velocity_database;`                                                                     | connect to the air_velocity_database                                   |
+|   MySQL        | `show full tables;`                                                                              | list all the tables inside the current database                        |
+|   MySQL        | `show columns in AirVelocityMeasurements;`                                                       | lists the columens in the table AirVelocityMeasurements                |
+|   MySQL        | `select * from AirVelocityMeasurements;`                                                         | lists all rows and related data from the table AirVelocityMeasurements |
+|   MySQL        | `delete from AirVelocityMeasurements;`                                                           | deletes all rows from the table AirVelocityMeasurements                |
+|   MySQL        | `SELECT user FROM mysql.user;`                                                                   | view all users                                                         |
+|   MySQL        | `ALTER TABLE AirVelocityMeasurements ADD COLUMN Datetime DATETIME(6) DEFAULT CURRENT_TIMESTAMP;` | add column                                                             |
+|   MySQL        | `ALTER TABLE AirVelocityMeasurements DROP COLUMN Datetime;`                                      | removes column                                                         |
