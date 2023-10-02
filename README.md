@@ -26,7 +26,7 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 
 ## Tools Used
 
-1.  Arduino + SparkFun library for FS3000-1015
+1.  Arduino + [SparkFun FS3000-1015](https://github.com/sparkfun/SparkFun_FS3000_Arduino_Library) library
 2.  [Ubuntu 22.04](https://ubuntu.com/download/desktop)
 3.  Python + [datetime](https://docs.python.org/3/library/datetime.html) library + [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library + [mysql-connector](https://pypi.org/project/mysql-connector-python/) library
 4.  [MariaDB](https://mariadb.org/)
