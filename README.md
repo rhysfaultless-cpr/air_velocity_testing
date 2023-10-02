@@ -22,6 +22,16 @@ There is also a refresh button, which adds the latest data into the graph, thoug
 
 <center><img src="/readme_assets/readme_grafana_plot.png" width="800"/></center>
 
+<br />
+
+## Tools Used
+
+1.  Arduino + SparkFun library for FS3000-1015
+2.  [Ubuntu 22.04](https://ubuntu.com/download/desktop)
+3.  Python + [datetime](https://docs.python.org/3/library/datetime.html) library + [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library + [mysql-connector](https://pypi.org/project/mysql-connector-python/) library
+4.  [MariaDB](https://mariadb.org/)
+5.  [Grafana](https://grafana.com/)
+
 <br/>
 
 ## Sensor and Microcontroller Installation
